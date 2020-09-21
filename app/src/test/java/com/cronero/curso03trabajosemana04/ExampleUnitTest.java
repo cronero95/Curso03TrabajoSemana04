@@ -1,4 +1,4 @@
-package com.cronero.curso03trabajosemana03;
+package com.cronero.curso03trabajosemana04;
 
 import org.junit.Test;
 

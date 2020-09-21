@@ -1,16 +1,15 @@
-package com.cronero.curso03trabajosemana03;
+package com.cronero.curso03trabajosemana04;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+
+import com.cronero.curso03trabajosemana04.adapter.MascotasGustadasAdaptador;
+import com.cronero.curso03trabajosemana04.pojo.Mascota;
 
 import java.util.ArrayList;
 

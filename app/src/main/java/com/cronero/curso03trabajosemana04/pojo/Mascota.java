@@ -1,4 +1,4 @@
-package com.cronero.curso03trabajosemana03;
+package com.cronero.curso03trabajosemana04.pojo;
 
 public class Mascota {
     private int foto;
@@ -17,6 +17,10 @@ public class Mascota {
         this.foto = foto;
         this.botonLike = botonLike;
         this.nombre = nombre;
+    }
+
+    public Mascota (int foto){
+        this.foto = foto;
     }
 
     public int getFoto() { return foto; }

@@ -1,6 +1,5 @@
-package com.cronero.curso03trabajosemana03;
+package com.cronero.curso03trabajosemana04.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,13 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cronero.curso03trabajosemana04.R;
+import com.cronero.curso03trabajosemana04.pojo.Mascota;
+
 import java.util.ArrayList;
 
-public class MascotasGustadasAdaptador  extends RecyclerView.Adapter<MascotasGustadasAdaptador.MascotaViewHolder>{
+public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder>{
 
     ArrayList<Mascota> mascotas;
 
-    public MascotasGustadasAdaptador(ArrayList<Mascota> mascotas){
+    public MascotaAdaptador(ArrayList<Mascota> mascotas){
         this.mascotas = mascotas;
     }
 
@@ -35,6 +37,18 @@ public class MascotasGustadasAdaptador  extends RecyclerView.Adapter<MascotasGus
         mascotaviewholder.imagenCachorro.setImageResource(mascota.getFoto());
         mascotaviewholder.botonLike.setImageResource(mascota.getBotonLike());
         mascotaviewholder.nombreCachorro.setText(mascota.getNombre());
+        mascotaviewholder.textoRating.setText(mascota.getRating());
+
+        mascotaviewholder.botonLike.setOnClickListener(new View.OnClickListener() {
+            int rating;
+            @Override
+            public void onClick(View view) {
+                rating = Integer.parseInt(mascota.getRating());
+                rating ++;
+                mascota.setRating("" + rating);
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -47,6 +61,7 @@ public class MascotasGustadasAdaptador  extends RecyclerView.Adapter<MascotasGus
         private ImageView imagenCachorro;
         private ImageButton botonLike;
         private TextView nombreCachorro;
+        private TextView textoRating;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -54,6 +69,7 @@ public class MascotasGustadasAdaptador  extends RecyclerView.Adapter<MascotasGus
             imagenCachorro = itemView.findViewById(R.id.imagenCachorro);
             botonLike = itemView.findViewById(R.id.botonLike);
             nombreCachorro = itemView.findViewById(R.id.nombreCachorro);
+            textoRating = itemView.findViewById(R.id.textoRating);
         }
     }
 }

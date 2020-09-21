@@ -1,4 +1,4 @@
-package com.cronero.curso03trabajosemana03;
+package com.cronero.curso03trabajosemana04;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.cronero.curso03trabajosemana03", appContext.getPackageName());
+        assertEquals("com.cronero.curso03trabajosemana04", appContext.getPackageName());
     }
 }
